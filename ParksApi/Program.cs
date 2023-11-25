@@ -7,12 +7,12 @@ builder.Services.AddControllers();
 
 builder.Services.AddDbContext<ParksApiContext>(
                     dbContextOptions => dbContextOptions
-                    .UseMySql(
-                        builder.Configuration["ConnectionStrings:DefaultConnection"],
+                        .UseMySql(
+                    builder.Configuration["ConnectionStrings:DefaultConnection"],
                     ServerVersion.AutoDetect(builder.Configuration["ConnectionStrings:DefaultConnection"]
                     )
                 )
-                );
+            );
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
