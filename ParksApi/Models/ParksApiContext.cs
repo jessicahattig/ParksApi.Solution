@@ -15,18 +15,18 @@ namespace ParksApi.Models
         {
             builder.Entity<StatePark>()
                 .HasData(
-                    new StatePark { ParkId = 1, Name = "State Park 1", Location = "Location 1", Description = "Description 1" },
-                    new StatePark { ParkId = 2, Name = "State Park 2", Location = "Location 2", Description = "Description 2" },
-                    new StatePark { ParkId = 3, Name = "State Park 3", Location = "Location 3", Description = "Description 3" },
-                    new StatePark { ParkId = 4, Name = "State Park 4", Location = "Location 4", Description = "Description 4" }
+                    new StatePark { StateParkId = 1, Name = "Green Valley State Park", Location = "Arizona", Description = "A beautiful state park with lush greenery." },
+                    new StatePark { StateParkId = 2, Name = "Mountain Ridge State Park", Location = "Colorado", Description = "A mountainous state park with breathtaking views." },
+                    new StatePark { StateParkId = 3, Name = "Riverfront State Park", Location = "Georgia", Description = "A serene state park along the riverbanks." },
+                    new StatePark { StateParkId = 4, Name = "Pine Grove State Park", Location = "Pennsylvania", Description = "A state park surrounded by tall pine trees." }
                 );
 
             builder.Entity<NationalPark>()
                 .HasData(
-                    new NationalPark { ParkId = 1, Name = "National Park 1", Location = "Location 1", Description = "Description 1" },
-                    new NationalPark { ParkId = 2, Name = "National Park 2", Location = "Location 2", Description = "Description 2" },
-                    new NationalPark { ParkId = 3, Name = "National Park 3", Location = "Location 3", Description = "Description 3" },
-                    new NationalPark { ParkId = 4, Name = "National Park 4", Location = "Location 4", Description = "Description 4" }
+                    new NationalPark { NationalParkId = 1, Name = "Grand Canyon National Park", Location = "Arizona", Description = "A majestic national park known for the Grand Canyon." },
+                    new NationalPark { NationalParkId = 2, Name = "Yellowstone National Park", Location = "Wyoming", Description = "The first national park with geothermal wonders." },
+                    new NationalPark { NationalParkId = 3, Name = "Great Smoky Mountains National Park", Location = "North Carolina", Description = "A national park with diverse plant and animal life." },
+                    new NationalPark { NationalParkId = 4, Name = "Yosemite National Park", Location = "California", Description = "Known for its waterfalls, giant sequoias, and diverse ecosystems." }
                 );
         }
     }

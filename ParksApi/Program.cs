@@ -5,8 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-// New lines, adding database context
-builder.Services.AddDbContext<CretaceousApiContext>(
+builder.Services.AddDbContext<ParksApiContext>(
                     dbContextOptions => dbContextOptions
                     .UseMySql(
                         builder.Configuration["ConnectionStrings:DefaultConnection"],
