@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ParksApi.Models;
 
-namespace ParksApi.Controllers
+namespace CretaceousApi.Controllers
 {
   [Route("api/[controller]")]
   [ApiController]
@@ -17,12 +17,29 @@ namespace ParksApi.Controllers
 
     // GET api/state parks
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<StatePark>>> Get()
+    public async Task<List<StatePark>> Get(string name, string location, string description)
     {
-      return await _db.StateParks.ToListAsync();
+      IQueryable<StatePark> query = _db.StateParks.AsQueryable();
+
+      if (name != null)
+      {
+        query = query.Where(entry => entry.Name == name);
+      }
+
+      if (location != null)
+      {
+        query = query.Where(entry => entry.Location == location);
+      }
+
+      if (description != null)
+      {
+        query = query.Where(entry => entry.Description == description);
+      }
+
+      return await query.ToListAsync();
     }
 
-    // GET: api/StateParks/{id}
+    // GET: api/StateParks/5
     [HttpGet("{id}")]
     public async Task<ActionResult<StatePark>> GetStatePark(int id)
     {
@@ -35,9 +52,8 @@ namespace ParksApi.Controllers
 
       return statepark;
     }
-  }
 
-  // POST api/animals
+    // POST api/stateparks
     [HttpPost]
     public async Task<ActionResult<StatePark>> Post(StatePark statepark)
     {
@@ -46,7 +62,7 @@ namespace ParksApi.Controllers
       return CreatedAtAction(nameof(GetStatePark), new { id = statepark.StateParkId }, statepark);
     }
 
-    // PUT: api/StateParks/5
+    // PUT: api/StateParks/4
     [HttpPut("{id}")]
     public async Task<IActionResult> Put(int id, StatePark statepark)
     {
@@ -63,7 +79,7 @@ namespace ParksApi.Controllers
       }
       catch (DbUpdateConcurrencyException)
       {
-        if (!StateParksExists(id))
+        if (!StateParkExists(id))
         {
           return NotFound();
         }
@@ -76,9 +92,9 @@ namespace ParksApi.Controllers
       return NoContent();
     }
 
-  // DELETE: api/StateParks/{id}
-  [HttpDelete("{id}")]
-  public async Task<IActionResult> DeleteStatePark(int id)
+    // DELETE: api/StateParks/{id}
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteStatePark(int id)
     {
       StatePark statepark = await _db.StateParks.FindAsync(id);
       if (statepark == null)
