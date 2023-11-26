@@ -7,9 +7,9 @@ builder.Services.AddControllers();
 
 builder.Services.AddDbContext<ParksApiContext>(
                     dbContextOptions => dbContextOptions
-                        .UseMySql(
-                    builder.Configuration["ConnectionStrings:DefaultConnection"],
-                    ServerVersion.AutoDetect(builder.Configuration["ConnectionStrings:DefaultConnection"]
+                    .UseMySql(
+                        builder.Configuration["ConnectionStrings:DefaultConnection"], 
+                        ServerVersion.AutoDetect(builder.Configuration["ConnectionStrings:DefaultConnection"]
                     )
                 )
             );
@@ -24,13 +24,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-else
+else 
 {
     app.UseHttpsRedirection();
 }
-
-
-app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
