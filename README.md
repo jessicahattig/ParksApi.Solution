@@ -2,10 +2,12 @@
 
 #### By _**Jessica Hattig**_
 
-#### _Epicodus, Week 25-26 Independent Project: C# and .NET, Building an API_
+#### _Epicodus, Week 25-26 Independent Project: C# and .NET, Building an API and Further Exploration with Authentication_
 
 ## Description
 The Parks API project is a web application designed to provide information about state and national parks. The API serves as a central hub for accessing details such as park names, locations, and descriptions. Whether you're planning a hiking adventure or simply curious about different parks, this API offers a convenient way to retrieve valuable information.
+
+On the second branch, "Authentication," this API further explores authentication within the context of a built API.
 
 ## Technologies Used
 - C#
