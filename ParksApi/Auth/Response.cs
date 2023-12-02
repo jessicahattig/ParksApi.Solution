@@ -1,4 +1,4 @@
-namespace PowellApi.Auth
+namespace ParksApi.Auth
 {
     public class Response
     {
