@@ -74,10 +74,7 @@ Example Request URL: `GET /api/NationalParks?name=Grand%20Canyon&location=Arizon
 
 
 Expected Response:
-
 ```json
-Response body
-Download
 [
   {
     "nationalParkId": 1,
