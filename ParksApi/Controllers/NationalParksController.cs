@@ -39,7 +39,7 @@ namespace ParksApi.Controllers
       return await query.ToListAsync();
     }
 
-    // GET: api/NationalParks/4
+    // GET: api/NationalParks/{id}
     [HttpGet("{id}")]
     public async Task<ActionResult<NationalPark>> GetNationalPark(int id)
     {

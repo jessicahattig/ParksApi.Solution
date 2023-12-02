@@ -346,13 +346,13 @@
                     new NationalPark { NationalParkId = 4, Name = "Yosemite National Park", Location = "California", Description = "Known for its waterfalls, giant sequoias, and diverse ecosystems." }
                 );
         }
+      }
     }
-  }
     ```
     </details>
 
-    - `$ dotnet ef migrations add SeedData`
-    - `$ dotnet ef database update`
+     - `$ dotnet ef migrations add SeedData`
+     - `$ dotnet ef database update`
 
 6. Add a Controller for your National Park model and complete controller actions for Reading all instances and individual instances of your National Parks Model.
   - `$ touch Controllers/NationalParks.cs`
@@ -450,7 +450,17 @@
     ```
     </details>
 
-8. Test app and confirm new endpoints are working. Run app with `$ dotnet run`. In the browser, visit `http://localhost:5000/swagger/index.html` to view Swagger pages. If using Postman, send GET requests to: `http://localhost:5000/api/NationalParks` and `http://localhost:5000/api/nationalparks/1` and to: `http://localhost:5000/api/StateParks` and `http://localhost:5000/api/stateparks/1`.
+8. Test the application to confirm that the new endpoints are functioning correctly. Run the app using the command `$ dotnet run`. In your browser, navigate to [Swagger pages](http://localhost:5000/swagger/index.html) to access the Swagger documentation.
+
+If you are using Postman, perform GET requests on the following endpoints:
+
+- **National Parks:**
+  - [`http://localhost:5000/api/NationalParks`](http://localhost:5000/api/NationalParks)
+  - [`http://localhost:5000/api/nationalparks/1`](http://localhost:5000/api/nationalparks/1)
+
+- **State Parks:**
+  - [`http://localhost:5000/api/StateParks`](http://localhost:5000/api/StateParks)
+  - [`http://localhost:5000/api/stateparks/1`](http://localhost:5000/api/stateparks/1)
 
 9. Add a Create action in the National Park controller:
     <details><summary><code>Controllers/NationalParksController.cs</code></summary> 
@@ -474,7 +484,7 @@
 
     ```c#
     ...
-    // PUT: api/NationalParks/4
+    // PUT: api/NationalParks/{id}
     [HttpPut("{id}")]
     public async Task<IActionResult> Put(int id, NationalPark nationalpark)
     {
@@ -561,7 +571,7 @@
 
     ```c#
     ...
-    // PUT: api/StateParks/4
+    // PUT: api/StateParks/{id}
     [HttpPut("{id}")]
     public async Task<IActionResult> Put(int id, StatePark statepark)
     {
