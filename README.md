@@ -68,8 +68,8 @@ dotnet tool install --global dotnet-ef --version 6.0.0
 9. Use your program of choice to make API calls. In your API calls, use the domain _http://localhost:5000_. 
 
 ## Project Roadmap, Notes and Documentation
-- [Project Roadmap and Notes](https://github.com/)
-- [API Documentation](https://github.com/)
+- [Project Roadmap and Notes](https://github.com/jessicahattig/ParksApi.Solution/blob/main/Notes.md)
+- [API Documentation](https://github.com/jessicahattig/ParksApi.Solution/blob/main/ApiDocumentation.md)
 
 ## Known Bugs
 - Please visit this projects [GitHub repository](https://github.com/jessicahattig/ParksApi.Solution.git) to submit Issues and Pull Requests.
