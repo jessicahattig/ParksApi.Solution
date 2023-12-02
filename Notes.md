@@ -719,32 +719,138 @@
     ```
     </details>
 
+  ### Adding Parameters to a GET Request to Support Query Strings for State Parks
+
+- We can add optional parameters for GET rquests so that users can filter results. In this example, we'll give users the ability to filter by `name`. The URL for a GET request for all animals of the species `Grand Canyon National Park` would look like this: `http://localhost:5000/api/stateparks?name=Grand%20Canyon%20National%20Park`.
+
+  - We just need to update our controller's `Get()` action like this:
+    <details><summary><code>Controllers/StateParksController.cs</code></summary> 
+
+    ```c#
+    ...
+    // GET: api/Animals
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<StatePark>>> Get(string name)
+    {
+      IQueryable<StatePark> query = _db.StateParks.AsQueryable();
+
+      if (name != null)
+      {
+        query = query.Where(entry => entry.Names == names);
+      }
+
+      return await query.ToListAsync();
+    }
+    ...
+    ```
+    </details>
+
+  - If we want to handle multiple search parameters we can do so. In this case we add a `location` parameter so users can filter by `name` and `location`:
+    <details><summary><code>Controllers/StateParksController.cs</code></summary> 
+
+    ```c#
+    ...
+    // GET api/stateparks
+    [HttpGet]
+    public async Task<List<StatePark>> Get(string name, string location, string description)
+    {
+      IQueryable<StatePark> query = _db.StateParks.AsQueryable();
+
+      if (name != null)
+      {
+        query = query.Where(entry => entry.Name == name);
+      }
+
+      if (location != null)
+      {
+        query = query.Where(entry => entry.Location == location);
+      }
+
+      return await query.ToListAsync();
+    }
+    ...
+    ```
+    </details>
+
+  - If we want to handle multiple search parameters we can do so. In this case we add a `description` parameter so users can filter by `name`, `location` and `description`:
+    <details><summary><code>Controllers/StateParksController.cs</code></summary> 
+
+    ```c#
+    ...
+    // GET api/state parks
+    [HttpGet]
+    public async Task<List<StatePark>> Get(string name, string location, string description)
+    {
+      IQueryable<StatePark> query = _db.StateParks.AsQueryable();
+
+      if (name != null)
+      {
+        query = query.Where(entry => entry.Name == name);
+      }
+
+      if (location != null)
+      {
+        query = query.Where(entry => entry.Location == location);
+      }
+
+      if (description != null)
+      {
+        query = query.Where(entry => entry.Description == description);
+      }
+
+      return await query.ToListAsync();
+    }
+    ...
+    ```
+    </details>
+
 ### API Model Validations:
 -  Model validations in a .NET API work much the same way they do in .NET MVC apps. 
     - `[Required]`: Makes a field required.
     - `[StringLength]`: Determines a maximum length for a string.
-    - `[Range]`: Determines a maximum and minimum for a numeric field.
     - You can include custom `ErrorMessages` that will be sent back to the user when they send an invalid POST/PUT/PATCH request. If you don't include a custom `ErrorMessage` the API will provide it's own.
     - Always be sure to create a new migration and update the database after every change you make to your models.
-    - Here's how we might include them in our Animal model:
-      <details><summary><code>Controllers/AnimalsController.cs</code></summary> 
+    - Here's how we might include them in our National Park model:
+      <details><summary><code>Models/NationalPark.cs</code></summary> 
 
       ```c#
       using System.ComponentModel.DataAnnotations;
-
-      namespace CretaceousApi.Models
+      
+      namespace ParksApi.Models
       {
-        public class Animal
+        public class NationalPark
         {
-          public int AnimalId { get; set; }
-          [Required]
-          [StringLength(20)]
-          public string Name { get; set; }
-          [Required]
-          public string Species { get; set; }
-          [Required]
-          [Range(0, 200, ErrorMessage = "Age must be between 0 and 200.")]
-          public int Age { get; set; }
+        public int NationalParkId { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string Name { get; set; }
+        [Required]
+        public string Location { get; set; }
+        [Required]
+        public string Description { get; set; }
+        }
+      }
+      ```
+      </details>
+
+      - Here's how we might include them in our State Park model:
+      <details><summary><code>Models/StatePark.cs</code></summary> 
+
+      ```c#
+      using System.ComponentModel.DataAnnotations;
+      
+      namespace ParksApi.Models
+      {
+        public class StatePark
+        {
+        public int StateParkId { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string Name { get; set; }
+        [Required]
+        public string Location { get; set; }
+        [Required]
+        public string Description { get; set; }
         }
       }
       ```
