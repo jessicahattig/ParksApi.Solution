@@ -1,4 +1,4 @@
-# API for State and National Parks_
+# API for State and National Parks
 
 #### By _**Jessica Hattig**_
 
