@@ -1,4 +1,4 @@
-# Documenting Endpoints in an API.
+# Documenting Endpoints in this API.
 In this application, there are two models: the first is named (`NationalParks`), and the second is named (`StateParks`). Each model has five associated endpoints. Below, you'll find instructions on how to access each endpoint, along with details on expected responses, URLs, and parameters.
 
 ## Model:NationalParks
@@ -215,7 +215,7 @@ Example Request Body *required:
 </table>
 
 
-StateParks~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~``
+
 ## Model:StateParks
 #### GET /api/StateParks
 <table>
@@ -423,7 +423,7 @@ Example Request Body *required:
         <td>DELETE</td>
         <td>/api/StateParks/{id}</td>
         <td>id (int)</td>
-        <td>Deletes an StatePark from the database.</td>
+        <td>Deletes a StatePark from the database.</td>
         <td>204: No Content</td>
       </tr>
 </table>
