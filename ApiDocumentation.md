@@ -145,7 +145,6 @@ Example Request Body *required:
 
 ```json
 {
-  "nationalParkId": "5",
   "name": "Crater Lake National Park",
   "location": "Oregon",
   "description": "Breathtaking landscapes with the deepest U.S. lake, nestled in a captivating volcanic caldera."
@@ -188,15 +187,15 @@ Expected Response:
 Example Request Body *required:
 
 ```json
-  {
-    "animalId": 100,
-    "name": "Matilda",
-    "species": "Woolly Mammoth",
-    "age": 8
-  }
+{
+  "nationalParkId": 5,
+  "name": "Crater Lake National Park",
+  "location": "Oregon",
+  "description": "Breathtaking landscapes with the deepest U.S. lake, nestled in a captivating volcanic caldera."
+}
 ```
 
-### DELETE /api/Animals/{id}
+### DELETE /api/NationalParks/{id}
 <table>
     <thead>
       <tr>
@@ -209,9 +208,9 @@ Example Request Body *required:
     </thead>
       <tr>
         <td>DELETE</td>
-        <td>/api/Animals/{id}</td>
+        <td>/api/NationalParks/{id}</td>
         <td>id (int)</td>
-        <td>Deletes an Animal from the database.</td>
+        <td>Deletes a NationalPark from the database.</td>
         <td>204: No Content</td>
       </tr>
 </table>
