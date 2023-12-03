@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
+
 namespace ParksApi.Auth
 {
     public class LoginModel
