@@ -30,7 +30,7 @@
   }
     ```
     </details>
-3. Create a new folder, `Auth` and create the `ApplicationDbContext` class under Auth folder using the following git commands and add below code. We will add all the classes related to authentication under the Auth folder in the next following steps. 
+3. Create a new folder, `Auth` and create the `ApplicationDbContext` class under Auth folder using the following Git commands and add below code. We will add all the classes related to authentication under the Auth folder in the next following steps. 
     -`$ cd ParksApi`
     -`$ git mkdir Auth`
     -`$ cd Auth`
@@ -57,7 +57,7 @@ namespace ParksApi.Auth
     ```
 </details>
 
-4. Create file `UserRoles.cs` in the `Auth` folder using the following git command and add the code below.
+4. Create file `UserRoles.cs` in the `Auth` folder using the following Git command and add the code below.
     -`$ git touch UserRoles.cs`
 <details><summary><code>Auth/UserRoles.cs</code></summary> 
 
@@ -73,7 +73,7 @@ namespace ParksApi.Auth
     ```
 </details>   
 
-5. Create file `RegisterModel.cs ` in the `Auth` folder using the following git command and add the code below.
+5. Create file `RegisterModel.cs ` in the `Auth` folder using the following Git command and add the code below.
      -`$ git touch RegisterModel.cs`
 <details><summary><code>Auth/RegisterModel.cs</code></summary> 
 
@@ -98,7 +98,7 @@ namespace ParksApi.Auth
     ```
 </details>
 
-6. Create file `LoginModel.cs` in the `Auth` folder using the following git command and add the code below.
+6. Create file `LoginModel.cs` in the `Auth` folder using the following Git command and add the code below.
     -`$ touch LoginModel.cs`
 <details><summary><code>Auth/LoginModel.cs</code></summary> 
 
@@ -119,7 +119,7 @@ namespace ParksApi.Auth
     ```
 </details>
 
-7. Create file `Response.cs` in the `Auth` folder using the following git command and add the code below.
+7. Create file `Response.cs` in the `Auth` folder using the following Git command and add the code below.
     -`$ touch Response.cs`
 <details><summary><code>Auth/Response.cs</code></summary> 
 
@@ -135,7 +135,7 @@ namespace ParksApi.Auth
     ```
 </details>
 
-8. Create controller file `AuthenticateController` inside the `Controllers` folder using the following git commands and add below code. 
+8. Create controller file `AuthenticateController` inside the `Controllers` folder using the following Git commands and add below code. 
     -`$ cd ..`
     -`$ cd Controllers`
     -`$ touch AuthenticateController`
@@ -277,16 +277,16 @@ namespace JWTAuthentication.NET6._0.Controllers
     ```
 </details>
 
-10. In the production directory `ParksApi`, add the following packages using the git commands:
+10. In the production directory `ParksApi`, add the following packages using the Git commands:
     -`$ cd ..`
     -`$ dotnet add package Microsoft.AspNetCore.Identity.UI --version 5.0.14`
     -`$ dotnet add package Microsoft.AspNetCore.Identity.UI --version 5.0.14`
 
-11. Add a migration and update the each individual context files by doing the git commands:
+11. Add a migration and update the each individual context files by doing the Git commands:
     -`$ dotnet ef migrations add InitialCreate -c ParksApiContext`
     -`$ dotnet ef database update -c ParksApiContext`
     -`$ dotnet ef migrations add AuthInitialCreate -c ApplicationDbContext`
     -`$ dotnet ef database update -c ApplicationDbContext`
 
-12. View the Parks API with Authentication in swagger by doing the git command:
+12. View the Parks API with Authentication in swagger by doing the Git command:
     -`$ dotnet watch run`
