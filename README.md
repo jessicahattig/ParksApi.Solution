@@ -7,7 +7,11 @@
 ## Description
 The Parks API project is a web application designed to provide information about state and national parks. The API serves as a central hub for accessing details such as park names, locations, and descriptions. Whether you're planning a hiking adventure or simply curious about different parks, this API offers a convenient way to retrieve valuable information.
 
-On the second branch, "Authentication," this API further explores authentication within the context of a built API.
+On the second branch, [Authentication](https://github.com/jessicahattig/ParksApi.Solution/tree/Authentication), this API further explores authentication within the context of a built API.
+
+After cloning the project, to access the `Authentication` branch, use the Git command `$ git checkout Authentication` (or `$ git switch Authentication` for Git version 2.23 or newer) to switch from the `Main` branch to the `Authentication` branch.
+
+To switch back to the `Main` branch, use Git command `$ git checkout Main`.
 
 ## Technologies Used
 - C#
