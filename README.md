@@ -17,6 +17,8 @@ To switch back to the `Main` branch, use Git command `$ git checkout Main`.
 - C#
 - Entity Framework Core
 - ASP.NET Core
+- JWT Authentication And Authorization
+- Identity Framework
 - Swagger
 
 ## Setup/Installation Requirements
